@@ -1,95 +1,67 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+"use client";
+
+import About from "./components/About";
+import Contact from "./components/Contact";
+import Experience from "./components/Experience";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
+import InteractivePointer from "./components/InteractivePointer";
+import MyWork from "./components/MyWork";
+import PageSection from "./components/PageSection";
+import ParticlesBackground from "./components/ParticlesBackground";
+import Portfolio from "./components/Portfolio";
+import PortfolioLayout from "./components/PortfolioLayout";
+import Skills from "./components/Skills";
+import Summary from "./components/Summary";
+import TypewriterLines from "./components/TypewriterLines";
+import WorkExperience from "./components/WorkExperience";
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.js</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
-        </div>
+    <>
+      <ParticlesBackground />
+      <InteractivePointer />
+      <main
+        id="mainContent"
+        className={`text-white h-screen pt-[57px] snap-y snap-mandatory overflow-y-scroll no-scrollbar scrollbar-hide scroll-smooth overflow-x-hidden`}
+        style={{
+          position: "relative",
+          zIndex: 1,
+          color: "white",
+        }}
+      >
+        <Header />
+        <PageSection
+          id="Summary"
+          classes="min-h-[calc(100vh-57px)] pt-[57px] snap-center flex flex-col items-start justify-center px-8 md:px-24 box-border"
+        >
+          <div className="flex-grow flex flex-col justify-center items-center">
+            <Summary />
+          </div>
+          <div className="mt-auto mb-8 self-center">
+            <TypewriterLines />
+          </div>
+        </PageSection>
+        <PageSection
+          id="work"
+          classes="min-h-screen snap-start pt-20 flex flex-col md:flex-row items-center bg-[#111826] px-8 md:px-24 overflow-y-auto"
+        >
+          <MyWork />
+        </PageSection>
+        <PageSection
+          id="projects"
+          classes="min-h-[calc(100vh-57px)] snap-start  px-8 md:px-24 bg-black-faint overflow-y-auto"
+        >
+          <PortfolioLayout />
+        </PageSection>
+        {/* <PageSection
+          id="contact"
+          classes="h-screen snap-center px-8 md:px-24 py-24 bg-black-faint"
+        >
+          <Contact />
+        </PageSection> */}
+        <Footer id="footer" />
       </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+    </>
   );
 }

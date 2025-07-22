@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+body {
+  cursor: none;
+  background-color: #111826 !important;
+  background: radial-gradient(circle, rgba(29, 78, 216, 0.5), transparent 80%);
+  background-blend-mode: normal;
+  -webkit-font-smoothing: antialiased;
+  overflow: auto;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE/Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.typewriter {
+  font-family: monospace;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid #fff;
+  /* color: #ff8904; */
+  /* color: #08e29f; */
+  /* color: #00ffd2; */
+  color: #05df72;
+  /* font-size: larger; */
+  font-size: 1.5rem;
+  animation: blink-caret 0.75s step-end infinite;
+  /* animation: blink-caret 0.75s; */
+}
+
+.typewriter::after {
+  animation: blink 1s step-end infinite;
+  border-right: none;
+}
+
+@keyframes blink-caret {
+  50% {
+    border-color: transparent;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fadeIn {
+  animation-name: fadeIn;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.delay-1000 {
+  animation-delay: 1s;
+}
+
+#cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 100%;
+  /* background-color: rgba(144, 70, 254, 0.6); */
+  /* background-color: #38f9ff; */
+  background-color: #dec5c594;
+  opacity: 0;
+  z-index: 10000;
+  user-select: none;
+  pointer-events: none;
+}
+
+.footer {
+  padding: 20px;
+  font-family: "Geist Mono", "Geist Mono Fallback";
+  color: #fff;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.easter-egg-trigger:hover {
+  text-decoration: underline;
+}
