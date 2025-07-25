@@ -15,6 +15,20 @@ const projects = [
     ),
   },
   {
+    title: "Smart movie recommender",
+    description:
+      "React · JavaScript · Node.js · Express · Vite · OpenAI API · OMDB API",
+    link: "https://movie-frontend-three-zeta.vercel.app/",
+    image: "/images/ai_movie.png",
+    extraContent: (
+      <p>
+        An AI-powered movie recommendation app that suggests films based on user
+        mood or preferences, using GPT for natural language understanding and
+        OMDB for metadata like ratings and genre.
+      </p>
+    ),
+  },
+  {
     title: "Weather app",
     description: "React / Next / TypeScript / Redis / OpenWeatherMap API",
     link: "https://appweather-theme.netlify.app/",
@@ -27,20 +41,6 @@ const projects = [
           light/dark mode toggle for enhanced user experience.
         </p>
       </>
-    ),
-  },
-  {
-    title: "Smart movie recommender",
-    description:
-      "React · JavaScript · Node.js · Express · Vite · OpenAI API · OMDB API",
-    link: "https://movie-frontend-three-zeta.vercel.app/",
-    image: "/images/ai_movie.png",
-    extraContent: (
-      <p>
-        An AI-powered movie recommendation app that suggests films based on user
-        mood or preferences, using GPT for natural language understanding and
-        OMDB for metadata like ratings and genre.
-      </p>
     ),
   },
 ];

@@ -33,26 +33,29 @@ const Footer = () => {
 
   return (
     <div className="footer-content max-w-4xl mx-auto text-center">
+      {isVisible && (
+        <div className="relative max-w-xs mx-auto">
+          <div
+            ref={tooltipRef}
+            className="easter-egg-tooltip absolute bottom-full mb-4 p-4 bg-gradient-to-r from-blue-500 to-indigo-700 text-white text-sm font-semibold rounded-lg shadow-lg left-1/2 transform -translate-x-1/2 z-50"
+          >
+            <p>
+              Designed in Figma, built with React, Next.js, and styled with
+              Tailwind CSS.
+            </p>
+
+            <div className=" absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full w-4 h-4 bg-gradient-to-r from-blue-500 to-indigo-700 rotate-45"></div>
+          </div>
+        </div>
+      )}
       <p
         ref={triggerRef}
-        className="easter-egg-trigger cursor-pointer text-blue-400 font-semibold mt-4 hover:text-blue-500 flex justify-center items-center space-x-2"
+        className="easter-egg-trigger bottom-full mb-4 cursor-pointer text-blue-400 font-semibold mt-4 hover:text-blue-500 flex justify-center items-center space-x-2"
         onClick={toggleMessage}
       >
         Site creation secrets
         <CogIcon className="w-6 h-6" />
       </p>
-      {isVisible && (
-        <div
-          ref={tooltipRef}
-          className="easter-egg-tooltip mt-4 p-4 bg-gradient-to-r from-blue-500 to-indigo-700 text-white text-sm font-semibold rounded-lg shadow-lg relative max-w-xs mx-auto"
-        >
-          <p>
-            Designed in Figma, built with React, Next.js, and styled with
-            Tailwind CSS.
-          </p>
-          <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-full w-4 h-4 bg-gradient-to-r from-blue-500 to-indigo-700 rotate-45"></div>
-        </div>
-      )}
 
       <footer className="footer">
         &copy; {new Date().getFullYear()} Vishnu Priya Rajagopal{" "}

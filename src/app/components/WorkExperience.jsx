@@ -89,7 +89,7 @@ const jobData = [
     ],
   },
   {
-    title: "Front-end Developer | Citrix GetGo",
+    title: "Front-end Developer | GoTo",
     dateRange: "2015 – 2017",
     location: "San Francisco, CA",
     content:
